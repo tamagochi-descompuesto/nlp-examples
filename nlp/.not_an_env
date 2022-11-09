@@ -1,0 +1,7 @@
+#Example of how an .env file needs to be configured for the run.py script to work, you can also make one with the default settings running the make_env.py script
+
+REDUCED_NER_DATASET=True|False #Wether to use a tiny NER dataset (to reduce the training time) or not
+NER_EPOCHS=10 #Int indicating the number of epochs the NER model will train
+X_RAPID_API_KEY=YOUR_API_KEY #String containing your X_RAPID_API_KEY obtained in the following URL https://rapidapi.com/googlecloud/api/google-translate1
+X_RAPID_API_HOST_GOOGLE=YOUR_API_HOST #String containing your X_RAPID_API_HOST obtained in the following URL https://rapidapi.com/googlecloud/api/google-translate1
+X_RAPID_API_HOST_DEEP=YOUR_API_HOST #String containing your X_RAPID_API_HOST obtained in the following URL https://rapidapi.com/gatzuma/api/deep-translate1/
