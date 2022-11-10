@@ -14,12 +14,12 @@ from flair.embeddings import WordEmbeddings, StackedEmbeddings, FlairEmbeddings
 load_dotenv()
 
 REDUCED_NER_DATASET = os.getenv('REDUCED_NER_DATASET')
-NER_EPOCHS = os.getenv('NER_EPOCHS')
+NER_EPOCHS = int(os.getenv('NER_EPOCHS'))
 
 COLUMNS = {0: 'text', 1: 'ner'}
 
 def init_tagger():
-    if(REDUCED_NER_DATASET):
+    if(REDUCED_NER_DATASET == 'True'):
         CORPUS: Corpus = ColumnCorpus('datasets', COLUMNS, 
         train_file='tiny_ner_dataset_train.txt', 
         test_file='tiny_ner_dataset_test.txt', 
@@ -59,6 +59,8 @@ def plot_training(loss_path):
     
     plt.legend(loc='upper right')
     plt.title('Training and test loss')
+    plt.xlabel('Epochs')
+    plt.ylabel('Loss')
     
     plt.show()
 
