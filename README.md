@@ -9,9 +9,11 @@ The scripts within this repository are configured by a `.env` file, this can be 
 It's important to note that the following variables need to be obtained from the [RapidAPI](https://rapidapi.com/hub) webpage by creating an account and subscribing to the corresponding API service (in this case, the [Deep Translate API](https://rapidapi.com/gatzuma/api/deep-translate1/)):
 * `X_RAPID_API_KEY`.
 * `X_RAPID_API_HOST_DEEP`.
-*Note:* Each environment variable is explained in the [About environment variables](About environment variables) section or in the [`.not_an_env` file](https://github.com/tamagochi-descompuesto/nlp-examples/blob/main/nlp/.not_an_env) .
+*Note:* Each environment variable is explained in the [About environment variables](About environment variables) section or in the [`.not_an_env` file](https://github.com/tamagochi-descompuesto/nlp-examples/blob/main/nlp/.not_an_env).
 
 Finally, in order for the scripts to work, all the necessary packages need to be installed, run the `pip install -r requirements.txt` to install all the requeriements needed for the scripts, sometimes errors may be raised due to the versioning of the libraries, to fix this you can edit the `requirements.txt` file and eliminate the versions of the corresponding packages.
+
+*Note 2.0:* Each NLP example has a test code if you run each code directly, these are found on the [models](https://github.com/tamagochi-descompuesto/nlp-examples/tree/main/nlp/models) folder.
 
 ## Running the scripts.
 To test each script just run the `python run.py` file, this will execute every NLP example done in this repository.
