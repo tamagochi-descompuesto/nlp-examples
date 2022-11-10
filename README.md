@@ -24,7 +24,9 @@ For this example a tiny dataset of movie reviews is used in order to calssify th
 Named Entity Recogniton (NER) is an NLP application that extracts information from a text in order to localize and categorize predefined classes and labels like people, organizations, places, etc. 
 ![image](https://user-images.githubusercontent.com/58601226/200972256-6e47b2d9-7969-4c2a-85a8-ef93c2aff077.png)
 To know more about NER you can follow this [link](https://en.wikipedia.org/wiki/Named-entity_recognition).
+
 For this example a NER model is trained with a big dataset of tweets, then, after the model is trained a `resources` folder will be generated with many files htat contain the performance of the model and its results, the script uses this files to plot the loss of the training and dev datasets (that can also be interpreted as the loss in the testing) to appreciate better the performance of the model.
+
 This script uses two important `.env` variables: `REDUCED_NER_DATASET` and `NER_EPOCHS` that will be detailed in the [About environment variables](About environment variables) section.
 ### API translation evaluation.
 This example focuses on the evaluation of two translation APIs using the [BLEU score](https://www.askpython.com/python/bleu-score) as evaluation metric. An english dataset is translated to spanish by the [Libre Translate API](https://github.com/LibreTranslate/LibreTranslate) and the [Deep Translate API](https://rapidapi.com/gatzuma/api/deep-translate1/) to finally be evaluated. Take into account that the Deep API has limited requests so be careful with how you use it. 
