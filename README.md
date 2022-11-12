@@ -14,6 +14,8 @@ It's important to note that the following variables need to be obtained from the
 
 *Note 2.0:* Each environment variable is explained in the [About environment variables](#about-environment-variables) section or in the [`.not_an_env` file](https://github.com/tamagochi-descompuesto/nlp-examples/blob/main/nlp/.not_an_env).
 
+If you're using an Anaconda environment you will need to download the sqlite3 dll file from the [SQLite download page](https://www.sqlite.org/download.html) and move the `sqlite3.dll` file to your `anaconda/DLLs` folder (check where your local anaconda installation is), then inside the `anaconda/envs` file localize your `DLLs` filder and copy the sqlite3 file too.
+
 Finally, in order for the scripts to work, all the necessary packages need to be installed, run the `pip install -r requirements.txt` to install all the requeriements needed for the scripts, sometimes errors may be raised due to the versioning of the libraries, to fix this you can edit the `requirements.txt` file and eliminate the versions of the corresponding packages.
 
 *Note 3.0:* Each NLP example has a test code if you run each code directly, these are found on the [models](https://github.com/tamagochi-descompuesto/nlp-examples/tree/main/nlp/models) folder.
