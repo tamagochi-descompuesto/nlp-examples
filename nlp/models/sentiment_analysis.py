@@ -7,6 +7,8 @@ def init_pipeline():
 
 def predict(dataset):
 	sentiment_pipeline = init_pipeline()
+	# Can remove punct like this: https://datagy.io/python-remove-punctuation-from-string/#:~:text=One%20of%20the%20easiest%20ways,maketrans()%20method.
+	# but may not want to remove punctuation for Sent analysis! sometimes punctuation helps us, e.g.  ":("  
 	preprocessed_dataset = [review.replace('!', '')
 	.replace('"', '')
 	.replace('#', '')
