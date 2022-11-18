@@ -73,7 +73,7 @@ def libre_translate(english_data):
     return en_es_translation
 
 def deep_translate(english_data):
-    bar = progressbar.ProgressBar(maxval=100, widgets=DEEP_BAR_WIDGETS).start()
+    bar = progressbar.ProgressBar(maxval=100, widgets=DEEP_BAR_WIDGETS).start() # cool! :) 
     en_es_translation = []
     i = 0
     for sentence in english_data:
@@ -123,5 +123,8 @@ def global_translate(english_data, spanish_data):
 
     return libre_score, deep_score
 
+"""
+Normally I don't love "functional-style" python i.e. no use of classes, but this is clean and well-named so it works for me. :) 
+"""
 if __name__ == '__main__':
     print(global_translate(['Hello, my name is translator', 'I am a very good translator'], ['Hola, mi nombre es traductor', 'Soy un traductor muy bueno']))
