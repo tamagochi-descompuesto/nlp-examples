@@ -7,38 +7,9 @@ def init_pipeline():
 
 def predict(dataset):
 	sentiment_pipeline = init_pipeline()
-	preprocessed_dataset = [review.replace('!', '')
-	.replace('"', '')
-	.replace('#', '')
-	.replace('$', '')
-	.replace('%', '')
-	.replace('&', '')
-	.replace("'", '')
-	.replace('(', '')
-	.replace(')', '')
-	.replace('*', '')
-	.replace('+', '')
-	.replace(',', '')
-	.replace('-', '')
-	.replace('.', '')
-	.replace('/', '')
-	.replace(':', '')
-	.replace(';', '')
-	.replace('<', '')
-	.replace('=', '')
-	.replace('>', '')
-	.replace('?', '')
-	.replace('@', '')
-	.replace('[', '')
-	.replace('\\', '')
-	.replace(']', '')
-	.replace('^', '')
-	.replace('_', '')
-	.replace('`', '')
-	.replace('{', '')
-	.replace('|', '')
-	.replace('}', '')
-	.replace('~', '') for review in dataset]
+	# Removing punctuation since the pipeline crashes if the tensor contains text with punctuation, 
+	# may search for a specific pipeline that allows punctuation 
+	preprocessed_dataset = [review.translate(str.maketrans('', '', string.punctuation)) for review in dataset]
 
 	outputs = sentiment_pipeline(preprocessed_dataset)
 
