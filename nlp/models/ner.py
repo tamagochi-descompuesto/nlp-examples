@@ -20,18 +20,18 @@ COLUMNS = {0: 'text', 1: 'ner'}
 
 def init_tagger():
     if(REDUCED_NER_DATASET == 'True'):
-        CORPUS: Corpus = ColumnCorpus('datasets', COLUMNS, 
+        corpus: Corpus = ColumnCorpus('datasets', COLUMNS, 
         train_file='tiny_ner_dataset_train.txt', 
         test_file='tiny_ner_dataset_test.txt', 
         dev_file='tiny_ner_dataset_dev.txt')
     else:
-        CORPUS: Corpus = ColumnCorpus('datasets', COLUMNS, 
+        corpus: Corpus = ColumnCorpus('datasets', COLUMNS, 
         train_file='ner_dataset_train.txt', 
         test_file='ner_dataset_test.txt', 
         dev_file='ner_dataset_dev.txt')
 
-    TAG_TYPE = 'ner'
-    TAG_DICTIONARY = CORPUS.make_label_dictionary(label_type=TAG_TYPE)
+    tag_type = 'ner'
+    TAG_DICTIONARY = corpus.make_label_dictionary(label_type=tag_type)
     EMBEDDING_TYPES = [
         # GloVe embeddings
         WordEmbeddings('glove'),
@@ -44,10 +44,10 @@ def init_tagger():
     TAGGER = SequenceTagger(hidden_size=256,             
                 embeddings=EMBEDDINGS, 
                 tag_dictionary=TAG_DICTIONARY,
-                tag_type=TAG_TYPE,
+                tag_type=tag_type,
                 use_crf=True,
                 allow_unk_predictions=True)
-    return CORPUS, TAGGER
+    return corpus, TAGGER
 
 def plot_training(loss_path):
     dataframe = pd.read_table(loss_path)
