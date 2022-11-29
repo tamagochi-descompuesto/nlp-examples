@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+nlp/src/resources/taggers/example-ner/best-model.pt
+nlp/src/resources/taggers/example-ner/dev.tsv
+nlp/src/resources/taggers/example-ner/final-model.pt
+nlp/src/resources/taggers/example-ner/loss.tsv
+nlp/src/resources/taggers/example-ner/test.tsv
+nlp/src/resources/taggers/example-ner/weights.txt
