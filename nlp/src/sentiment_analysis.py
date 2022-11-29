@@ -12,9 +12,13 @@ def predict(dataset):
 	preprocessed_dataset = [review.translate(str.maketrans('', '', string.punctuation)) for review in dataset]
 
 	outputs = sentiment_pipeline(preprocessed_dataset)
+	output_list = []
 
 	for output in outputs:
-		print(output['label'])
+		label = output['label']
+		output_list.append(label)
+		print(label)
+	return output_list
 		
 if __name__ == "__main__":
 	predict(['I love you', 'I like you', 'I hate you'])

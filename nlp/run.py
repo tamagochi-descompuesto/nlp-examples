@@ -1,6 +1,6 @@
-from models.ner import train, plot_training
-from models.sentiment_analysis import predict
-from models.api_translation import global_translate
+from src.ner import train, plot_training
+from src.sentiment_analysis import predict
+from src.api_translation import global_translate
 
 
 def load_dataset(path):

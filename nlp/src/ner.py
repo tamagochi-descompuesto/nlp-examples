@@ -15,17 +15,19 @@ load_dotenv()
 
 REDUCED_NER_DATASET = os.getenv('REDUCED_NER_DATASET')
 NER_EPOCHS = int(os.getenv('NER_EPOCHS'))
+DIRNAME = os.path.dirname(__file__)
+DATA = os.path.join(DIRNAME,'../datasets')
 
 COLUMNS = {0: 'text', 1: 'ner'}
 
 def init_tagger():
     if(REDUCED_NER_DATASET == 'True'):
-        corpus: Corpus = ColumnCorpus('datasets', COLUMNS, 
+        corpus: Corpus = ColumnCorpus(DATA, COLUMNS, 
         train_file='tiny_ner_dataset_train.txt', 
         test_file='tiny_ner_dataset_test.txt', 
         dev_file='tiny_ner_dataset_dev.txt')
     else:
-        corpus: Corpus = ColumnCorpus('datasets', COLUMNS, 
+        corpus: Corpus = ColumnCorpus(DATA, COLUMNS, 
         train_file='ner_dataset_train.txt', 
         test_file='ner_dataset_test.txt', 
         dev_file='ner_dataset_dev.txt')
@@ -67,10 +69,11 @@ def plot_training(loss_path):
 def train():
     corpus, tagger = init_tagger()
     model_trainer = ModelTrainer(tagger, corpus)
-    model_trainer.train('resources/taggers/example-ner',
+    ner_dict = model_trainer.train('resources/taggers/example-ner',
                        learning_rate=0.1,
                        mini_batch_size=32,
                        max_epochs=NER_EPOCHS)
+    return ner_dict
 
 if __name__ == '__main__':
     train()
